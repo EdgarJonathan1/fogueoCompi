@@ -8,7 +8,7 @@
 imprimir("Tablas de" & " multiplicar");
 
 //Se declara la variable a, de tipo numero
-numero a;
+NUMERO a;
 //Se asigna a la variable a el valor 0
 a=0;
 //Se declara la variable c, de tipo numero
@@ -29,7 +29,8 @@ mientras(a<4+c){
 	b=0;
 	mientras(b<4+c){
 		b=b+1;
-		imprimir(a & " * " & b & " = " & a * b);
+		IMPRIMIR(a & " * " & b & " = " & a * b);
+	    ImPriMir("iese");
 	}
 	imprimir("----------------");
 }

@@ -1,8 +1,6 @@
 # InterpreteSencilloPLY
 
 ## Información General
-- Creado por Rainman Sián
-- Febrero 2020
 
 
 ## Herramientas utilizadas
