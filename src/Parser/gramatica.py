@@ -189,8 +189,17 @@ def p_statement(t):
     '''statement        : stmt_assignmet
                         | stmt_declaration
                         | stmt_expr
+                        | stmt_ifexpr
     '''
     t[0] = t[1]
+
+def p_if_expression():
+    'stmt_ifexpr  : IF PARIZQ expression PARDER LLAVIZQ statements LLAVDER'
+
+
+def p_if_expression_outStmt():
+    'stmt_ifexpr  : IF PARIZQ expression PARDER LLAVIZQ  LLAVDER'
+
 
 def p_stmt_asignmet(t):
     'stmt_assignmet     : ID IGUAL expression PTCOMA'
@@ -214,7 +223,7 @@ def p_tipo(t):
 #TODO: hacer las funciones nativas print y scan HOY
 
 def p_expression(t):
-    '''expression 	: expression MAS 		expression
+    '''expression   : expression MAS 		expression
                     | expression MENOS 		expression
                     | expression POR 		expression
                     | expression DIVIDIDO 	expression

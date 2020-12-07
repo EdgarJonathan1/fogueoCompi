@@ -1,7 +1,7 @@
 from src.Ast.Expression.Expression import Expression
 from src.Ast.Expression.ExprResult import ExprResult
 from src.Ast.Expression.Tipo import Tipo
-
+from src.Ast.TablaSimbolo import Entorno
 class Modulo(Expression):
 	'''
 		Esta clase recibe dos operadores para realizar la suma
@@ -11,10 +11,10 @@ class Modulo(Expression):
 		self.izq = izq
 		self.der = der
 
-	def execute(self) -> ExprResult:
+	def execute(self,entorno:Entorno) -> ExprResult:
 
-		izqResult:ExprResult = self.izq.execute()
-		derResult:ExprResult = self.der.execute()
+		izqResult:ExprResult = self.izq.execute(entorno)
+		derResult:ExprResult = self.der.execute(entorno)
 
 		if izqResult.tipo != Tipo.DOUBLE or derResult.tipo != Tipo.DOUBLE:
 			msg:str = "Error Semantico: linea:"+str(self.izq.linea)+" Col:"+str(self.izq.col)+\

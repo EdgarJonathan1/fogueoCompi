@@ -1,6 +1,7 @@
 from src.Ast.Statement.Statement import Statement
 from src.Ast.Expression.Expression import Expression
 from src.Ast.Expression.ExprResult import ExprResult
+from src.Ast.TablaSimbolo import Entorno
 
 class Assignment(Statement):
 
@@ -9,8 +10,8 @@ class Assignment(Statement):
 		self.identifier = identifier
 		self.val = val
 
-	def execute(self) -> None:
-		exprResult:ExprResult = self.val.execute()
+	def execute(self,entorno:Entorno) -> None:
+		exprResult:ExprResult = self.val.execute(entorno)
 
 		print('Valor de la asignacion: ',exprResult.value)
 

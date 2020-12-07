@@ -3,6 +3,8 @@ from src.Ast.Statement.Statement import Statement
 
 if __name__ == '__main__':
 
+        # TODO: leer libro capitulo 6 del dragon
+
 	f = open("./entrada.txt", "r")
 	input = f.read()
 	#print(input)
@@ -11,5 +13,5 @@ if __name__ == '__main__':
 	i=0
 	while i < len(stmts):
 		stmt = stmts[i]
-		stmt.execute()
+		stmt.execute({})
 		i+=1

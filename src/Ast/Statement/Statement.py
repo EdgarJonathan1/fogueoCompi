@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from src.Ast.Nodo import Nodo
-
+from src.Ast.TablaSimbolo import Entorno
 
 class Statement(Nodo):
 	'''
@@ -11,5 +11,5 @@ class Statement(Nodo):
 		super().__init__(linea, col)
 
 	@abstractmethod
-	def execute(self) -> None:
+	def execute(self,entorno:Entorno) -> None:
 		pass

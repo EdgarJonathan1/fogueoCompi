@@ -1,5 +1,5 @@
 from src.Ast.Statement.Statement import Statement
-
+from src.Ast.TablaSimbolo import Entorno
 
 class ListStatement(Statement):
 
@@ -11,7 +11,8 @@ class ListStatement(Statement):
 	def add(self,stmt:Statement):
 		self.stmts.append(stmt)
 
-	def execute(self) -> None:
+	def execute(self,entorno:Entorno) -> None:
+
 		for stmt in self.stmts:
-			stmt.execute()
+			stmt.execute(entorno)
 
